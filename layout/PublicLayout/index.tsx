@@ -1,10 +1,7 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Footer } from 'components/Footer';
 import { Navbar } from 'components/Navbar';
-
-interface PropsLayout {
-	children: ReactElement;
-}
+import { PropsLayout } from 'interfaces/interfaces';
 
 export const PublicLayout = ({ children }: PropsLayout) => {
 	return (
