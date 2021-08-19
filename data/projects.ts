@@ -17,7 +17,7 @@ export const projects: Project[] = [
 	{
 		title: 'Clone IOS Calculator React Native',
 		description: 'Mobile App built with React Native and TypeScript',
-		linkOnline: false,
+		linkOnline: '',
 		linkRepo: 'https://github.com/j4viermora/calculator-RN',
 	},
 	{

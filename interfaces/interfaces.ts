@@ -4,7 +4,7 @@ export interface Project {
 	title: string;
 	description: string;
 	linkRepo: string;
-	linkOnline?: string | boolean;
+	linkOnline?: string;
 }
 
 
