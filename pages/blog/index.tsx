@@ -34,6 +34,7 @@ const blog = () => {
 						</section>
 						<hr />
 						<section className='section'>
+						<h2 className='title is-1 mb-6'>This section is under construction</h2>
 							<h2 className='title'>Últimos Artículos:</h2>
 							<ul>
 								{titlePost.slice(0, 5).map((item) => (
