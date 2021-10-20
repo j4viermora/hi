@@ -3,8 +3,8 @@ import { ReactElement } from "react";
 export interface Project {
 	title: string;
 	description: string;
-	linkRepo: string;
-	linkOnline?: string;
+	linkRepo?: string |  undefined;
+	linkOnline?: string | undefined;
 }
 
 
