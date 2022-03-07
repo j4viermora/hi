@@ -7,7 +7,7 @@ export const NavbarBlog = () => {
 	return (
 		<nav className='navbar is-fixed-top is-transparent'>
 			<div className='navbar-brand'>
-				<a className='navbar-item' href='https://bulma.io'>
+				<a className='navbar-item'>
 					{/* <img
                 src='https://bulma.io/images/bulma-logo.png'
                 alt='Bulma: a modern CSS framework based on Flexbox'
@@ -30,9 +30,11 @@ export const NavbarBlog = () => {
 				id='navbarExampleTransparentExample'
 				className={`navbar-menu ${open && 'is-active'}`}>
 				<div className='navbar-end'>
-					<a className='navbar-item' href='#'>
-						Blog
-					</a>
+					<Link href='/blog'>
+						<a className='navbar-item' href='#'>
+							Blog
+						</a>
+					</Link>
 				</div>
 				<div className='navbar-end'>
 					<div className='navbar-item'>
@@ -44,7 +46,7 @@ export const NavbarBlog = () => {
 								Github
 							</a>
 							<Link href='/'>
-								<a className='button is-link'>Back Home</a>
+								<a className='button is-link'>Ir a inicio</a>
 							</Link>
 						</div>
 					</div>

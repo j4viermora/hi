@@ -5,11 +5,11 @@ export const Home = () => {
 		<>
 			<section className='section is-large' id='home'>
 				<h2 className='title'>
-					The solution does not have to be impossible
+					La solución no tiene por qué ser imposible
 				</h2>
 				<p>
-					The web is changing the way we live, and the time to
-					optimize and take advantage of time is now.
+					La web está cambiando la forma en que vivimos, y el momento
+					de automatizar y aprovechar el tiempo es ahora.
 				</p>
 			</section>
 			<style jsx>{``}</style>

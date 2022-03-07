@@ -1,20 +1,19 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export interface Project {
 	title: string;
 	description: string;
-	linkRepo: string;
+	linkRepo?: string;
 	linkOnline?: string;
 }
-
 
 export interface PropsLayout {
 	children: ReactElement;
 }
 
 export interface TitlePost {
-	img: string;
+	img?: string;
 	title: string;
 	slug: string;
-	id: number;
+	date: string;
 }

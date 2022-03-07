@@ -14,7 +14,7 @@ export const Header = ({ name, role }: Developer) => {
 						className='mb-5'
 						src='https://avatars.githubusercontent.com/u/55900303?v=4'
 					/>
-					<h2 className='title is-2'>Hi, i'm {name}</h2>
+					<h2 className='title is-2'>Hola, soy {name}</h2>
 					<h3 className='title is-4'>{role}</h3>
 				</div>
 			</header>

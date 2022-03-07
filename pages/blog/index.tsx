@@ -1,9 +1,16 @@
 import React from 'react';
-import { BlogLayout } from 'layout/BlogLayout';
+import { BlogLayout } from '../../layout/BlogLayout';
 import Head from 'next/head';
-import { ListItemPostBlog } from 'components/ListItemPostBlog';
-import { TitlePost } from 'interfaces/interfaces';
-const blog = () => {
+
+import { getAllFilesMetadata } from '../../lib/mdx';
+import { ListItemPostBlog } from '../../components/ListItemPostBlog';
+import { TitlePost } from '../../interfaces/interfaces';
+
+interface Props {
+	post: TitlePost[];
+}
+
+const blog = ({ post }: Props) => {
 	return (
 		<>
 			<Head>
@@ -21,7 +28,7 @@ const blog = () => {
 			<BlogLayout>
 				<>
 					<main className='container'>
-						<section className='section mt-6 is-flex is-justify-content-center'>
+						{/* <section className='section mt-6 is-flex is-justify-content-center'>
 							<div className='card mx-3'>
 								<div className='card-content'>JavaScript</div>
 							</div>
@@ -31,14 +38,19 @@ const blog = () => {
 							<div className='card mx-3'>
 								<div className='card-content'>Html</div>
 							</div>
-						</section>
-						<hr />
+						</section> */}
+						{/* <hr /> */}
 						<section className='section'>
-						<h2 className='title is-1 mb-6'>This section is under construction</h2>
-							<h2 className='title'>Últimos Artículos:</h2>
+							{/* <h2 className='title is-1 mb-6'>
+								This section is under construction
+							</h2> */}
+							<h2 className='title mb-6'>Últimos Artículos:</h2>
 							<ul>
-								{titlePost.slice(0, 5).map((item) => (
-									<ListItemPostBlog key={item.id} {...item} />
+								{post.slice(0, 5).map((post: TitlePost) => (
+									<ListItemPostBlog
+										key={post.title}
+										{...post}
+									/>
 								))}
 							</ul>
 						</section>
@@ -51,41 +63,11 @@ const blog = () => {
 
 export default blog;
 
-const titlePost: TitlePost[] = [
-	{
-		img: 'https://midu.dev/images/tags/javascript.png',
-		title: 'Eliminar primer carácter de una cadena de texto en JavaScript',
-		slug: 'titulo-unico-del-post',
-		id: 1,
-	},
-	{
-		img: 'https://midu.dev/images/tags/css.png',
-		title: 'Las Mejores formas de centrar elementos en css',
-		slug: 'titulo-unico-del-post',
-		id: 2,
-	},
-	{
-		img: 'https://midu.dev/images/tags/javascript.png',
-		title: 'Las Mejores formas de centrar elementos en css',
-		slug: 'titulo-unico-del-post',
-		id: 3,
-	},
-	{
-		img: 'https://midu.dev/images/tags/javascript.png',
-		title: 'Las Mejores formas de centrar elementos en css',
-		slug: 'titulo-unico-del-post',
-		id: 4,
-	},
-	{
-		img: 'https://midu.dev/images/tags/css.png',
-		title: 'Las Mejores formas de centrar elementos en css',
-		slug: 'titulo-unico-del-post',
-		id: 5,
-	},
-	{
-		img: 'https://midu.dev/images/tags/javascript.png',
-		title: 'Las Mejores formas de centrar elementos en css',
-		slug: 'titulo-unico-del-post',
-		id: 6,
-	},
-];
+export const getStaticProps = async () => {
+	const post = await getAllFilesMetadata();
+	return {
+		props: {
+			post,
+		},
+	};
+};

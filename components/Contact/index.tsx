@@ -1,25 +1,24 @@
-import React, {  SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 
 export const Contact = () => {
-
-	const emailTo = 'javier@expressativo.com';
+	const emailTo = 'j4viermora@gmail.com';
 
 	const [form, setForm] = useState({
-		name:'',
-		email:'',
-		subject:'',
-		message:''
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
 	});
 
-	const { name, email, subject, message} = form;
+	const { name, email, subject, message } = form;
 
-	const finallyMessage = `Hola mi nombre es ${name} \n Mi correo es: ${email} \n ${message}`
+	const finallyMessage = `Hola mi nombre es ${name} \n Mi correo es: ${email} \n ${message}`;
 
-	const handleChange = ({target}:any)=>{
+	const handleChange = ({ target }: any) => {
 		setForm({
 			...form,
-			[target.id] : target.value
-		})
+			[target.id]: target.value,
+		});
 	};
 
 	const resetForm = () => {
@@ -29,23 +28,18 @@ export const Contact = () => {
 			name: '',
 			subject: '',
 			message: '',
-		})
-	}
-
-	const handleSubmit = (event:SyntheticEvent) => {
-		event.preventDefault()
-		console.log({name, email, subject, message})
-		document.getElementById('emailTo')?.click()
+		});
 	};
 
+	const handleSubmit = (event: SyntheticEvent) => {
+		event.preventDefault();
+		document.getElementById('emailTo')?.click();
+	};
 
 	return (
 		<section className='section is-medium' id='contact'>
-			<h3 className='title'>Contact</h3>
-			<p>
-				If you got here you may have any questions, then do not hesitate
-				to contact me
-			</p>
+			<h3 className='title'>Contacto</h3>
+			<p>Si quieres trabajar conmigo no dudes en contactarme</p>
 			<form
 				onSubmit={handleSubmit}
 				className='mt-5'
@@ -54,7 +48,7 @@ export const Contact = () => {
 				}}>
 				<div className='field'>
 					<label htmlFor='name' className='label'>
-						Name
+						Nombre
 					</label>
 					<div className='control'>
 						<input
@@ -102,21 +96,21 @@ export const Contact = () => {
 					</div>
 				</div>
 				<div className='field'>
-					<label className='label'>Message</label>
+					<label className='label'>Mensaje</label>
 					<div className='control'>
 						<textarea
 							id='message'
 							className='textarea'
 							placeholder='Hi Javier, since Batman has been missing Gordon for a week and I thought it was good to ask for your help'
 							value={message}
-							onChange={handleChange}
-							>
-							</textarea>
+							onChange={handleChange}></textarea>
 					</div>
 				</div>
 
-				<button className='button'>Send message</button>
-				<a id='emailTo' href={`mailto:${emailTo}?subject=${subject}&body=${finallyMessage}`}></a>
+				<button className='button'>Enviar mensajes</button>
+				<a
+					id='emailTo'
+					href={`mailto:${emailTo}?subject=${subject}&body=${finallyMessage}`}></a>
 			</form>
 		</section>
 	);

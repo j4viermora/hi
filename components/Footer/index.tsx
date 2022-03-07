@@ -6,9 +6,13 @@ export const Footer = () => {
 			<footer className='footer'>
 				<div className='content has-text-centered'>
 					<p>
-						<strong>Developer</strong> by{' '}
-						<a href='https://jgthms.com'>Javier Mora</a> with love
-						for the web.
+						<strong>Desarrollado</strong> por{' '}
+						<a
+							href='https://twitter.com/j4viermora'
+							target='_blank'>
+							Javier Mora
+						</a>{' '}
+						con amor para la web.
 					</p>
 				</div>
 			</footer>

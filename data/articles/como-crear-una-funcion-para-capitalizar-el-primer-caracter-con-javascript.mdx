@@ -1,0 +1,35 @@
+---
+title: 'Crea una función para capitalizar palabras en javascript'
+date: '2022-06-03'
+---
+
+# Capitaliza el primer caracter de un string
+
+![imagen](/maquina-de-escribir.jpg)
+
+## Más fácil de lo que crees
+
+El día de hoy nos vamos a valer de una expresión regular para realizar esta tarea, bien es cierto que a primera instancia pareciera que estamos complicando las cosas para una tarea tan sencilla, la cual pudieramos hacer tambien, echando mano de algún otro método como usar varios if y unos bucles for etc, vamos a darle la oportunidad a esta forma de hacerlo.
+
+Te mostrate antes que nada como quedara nuestra función y luego te ire mostrando paso a paso que lo que hemos hecho.
+
+```javascript
+const capitalize = (word) => {
+	return word
+		.toLowerCase()
+		.replace(/\w/, (firstLetter) => firstLetter.toUpperCase());
+};
+```
+
+Estamos creando una función que recibe una cadena de texto, y antes que anda nos aseguramos que todos los caracteres estén en minúscula(Ya sabes así nos ahorramos que el string venga todo mal formateado), y luego hacemos un replace, pero para evitarnos iteraciones y condicionales innecesarias, usaremos una expresión regular que en palabras sencillas le estamos diciendo que el primer caracter de palabra que consiga lo tome.
+
+Cuandos nos referimos a caracter de palabra serían
+
+-   De a - z (Minúscula)
+-   De A - Z (Mayúscula)
+-   De 0 - 9
+-   Y el underscore o guión bajo "\_"
+
+Una vez tomanos ese primer caracter lo pasamos a mayúscula
+
+Y eso es todo, ya tenemos esta pequeña función que nos puede acompañar en nuestros proyectos

@@ -1,0 +1,1 @@
+Es esta carpeta podemos crear un archvio que se encargue de manejar los estilos de cada uno de los elementos html, para de esa manera utilizar los componenetes en mdx, y pasariamos por props el objeto, al compoenente MDXRemote nativo de la libreria

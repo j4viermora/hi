@@ -1,10 +1,11 @@
-import { About } from 'components/About';
-import { Header } from 'components/Header';
-import { Home as HomeWork } from 'components/Home';
+import { About } from '../components/About';
+import { Header } from '../components/Header';
+import { Home as HomeWork } from '../components/Home';
 import Head from 'next/head';
-import { MyWork } from 'components/MyWork';
-import { PublicLayout } from 'layout/PublicLayout';
-import { Contact } from 'components/Contact';
+import { MyWork } from '../components/MyWork';
+import { PublicLayout } from '../layout/PublicLayout';
+import { Contact } from '../components/Contact';
+import { Experience } from '../components/Experience/Experience';
 
 export default function Home() {
 	return (
@@ -30,6 +31,8 @@ export default function Home() {
 				<About />
 				<hr />
 				<MyWork />
+				<hr />
+				<Experience />
 				<hr />
 				<Contact />
 			</>
