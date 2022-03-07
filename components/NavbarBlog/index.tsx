@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const NavbarBlog = () => {
 	const [open, setOpen] = useState<boolean>(false);
+	const router = useRouter();
+	const goBack = () => {
+		router.back();
+	};
 
 	return (
 		<nav className='navbar is-fixed-top is-transparent'>
 			<div className='navbar-brand'>
-				<a className='navbar-item'>
-					{/* <img
-                src='https://bulma.io/images/bulma-logo.png'
-                alt='Bulma: a modern CSS framework based on Flexbox'
-                width='112'
-                height='28'
-            /> */}
-					Javier A. Mora
-				</a>
+				<Link href='/'>
+					<a className='navbar-item'>Javier A. Mora</a>
+				</Link>
 				<div
 					className={`navbar-burger ${open && 'is-active'}`}
 					data-target='navbarExampleTransparentExample'
@@ -45,9 +44,10 @@ export const NavbarBlog = () => {
 								target='_blank'>
 								Github
 							</a>
-							<Link href='/'>
-								<a className='button is-link'>Ir a inicio</a>
-							</Link>
+
+							<button className='button is-link' onClick={goBack}>
+								Ir atras
+							</button>
 						</div>
 					</div>
 				</div>

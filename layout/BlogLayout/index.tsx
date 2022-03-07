@@ -7,8 +7,16 @@ export const BlogLayout = ({ children }: PropsLayout) => {
 	return (
 		<>
 			<NavbarBlog />
-			{children}
+			<main className='container'>{children}</main>
+
 			<Footer />
+			<style jsx>
+				{`
+					main {
+						min-height: calc(100vh - 100px);
+					}
+				`}
+			</style>
 		</>
 	);
 };

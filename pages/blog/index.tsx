@@ -27,8 +27,7 @@ const blog = ({ post }: Props) => {
 			</Head>
 			<BlogLayout>
 				<>
-					<main className='container'>
-						{/* <section className='section mt-6 is-flex is-justify-content-center'>
+					{/* <section className='section mt-6 is-flex is-justify-content-center'>
 							<div className='card mx-3'>
 								<div className='card-content'>JavaScript</div>
 							</div>
@@ -39,22 +38,18 @@ const blog = ({ post }: Props) => {
 								<div className='card-content'>Html</div>
 							</div>
 						</section> */}
-						{/* <hr /> */}
-						<section className='section'>
-							{/* <h2 className='title is-1 mb-6'>
+					{/* <hr /> */}
+					<section className='section is-medium'>
+						{/* <h2 className='title is-1 mb-6'>
 								This section is under construction
 							</h2> */}
-							<h2 className='title mb-6'>Últimos Artículos:</h2>
-							<ul>
-								{post.slice(0, 5).map((post: TitlePost) => (
-									<ListItemPostBlog
-										key={post.title}
-										{...post}
-									/>
-								))}
-							</ul>
-						</section>
-					</main>
+						<h2 className='title mb-6'>Últimos Artículos:</h2>
+						<ul>
+							{post.slice(0, 5).map((post: TitlePost) => (
+								<ListItemPostBlog key={post.title} {...post} />
+							))}
+						</ul>
+					</section>
 				</>
 			</BlogLayout>
 		</>

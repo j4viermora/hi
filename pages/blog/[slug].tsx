@@ -15,33 +15,31 @@ export const SinglePost = ({ source, frontmatter }: any) => {
 				<meta content={frontmatter.title}></meta>
 			</Head>
 			<BlogLayout>
-				<main className='container'>
-					<section className='section is-medium'>
-						<div className='content'>
-							<MDXRemote {...source} components={MDXComponents} />
-						</div>
-						<hr />
-						<h4 className='title is-6'>
-							Sígueme en mis redes sociales:
-						</h4>
-						<div>
-							<article className='is-flex is-align-items-center'>
-								<Image
-									width={'40'}
-									height={'40'}
-									src='/twitter.svg'
-								/>
-								<span
-									style={{
-										width: 10,
-									}}></span>
-								<a href='https://j4viermora' target='_blank'>
-									@j4viermora
-								</a>
-							</article>
-						</div>
-					</section>
-				</main>
+				<section className='section is-medium'>
+					<div className='content'>
+						<MDXRemote {...source} components={MDXComponents} />
+					</div>
+					<hr />
+					<h4 className='title is-6'>
+						Sígueme en mis redes sociales:
+					</h4>
+					<div>
+						<article className='is-flex is-align-items-center'>
+							<Image
+								width={'40'}
+								height={'40'}
+								src='/twitter.svg'
+							/>
+							<span
+								style={{
+									width: 10,
+								}}></span>
+							<a href='https://j4viermora' target='_blank'>
+								@j4viermora
+							</a>
+						</article>
+					</div>
+				</section>
 			</BlogLayout>
 		</>
 	);
@@ -53,11 +51,6 @@ export const getStaticProps: GetStaticProps = async ({
 	params: { slug },
 }: any) => {
 	const { source, frontmatter } = await getFileBySlug(slug);
-
-	console.log({
-		source,
-		frontmatter,
-	});
 	return {
 		props: {
 			source,
