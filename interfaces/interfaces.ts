@@ -17,3 +17,11 @@ export interface TitlePost {
 	slug: string;
 	date: string;
 }
+
+export interface IFrontmatter {
+	title: string;
+	date: string;
+	keywords: string;
+	slug: string;
+	content: string;
+}

@@ -3,14 +3,13 @@ import { Project } from '../interfaces/interfaces';
 export const projects: Project[] = [
 	{
 		title: 'Foody App',
-		description:
-			'Web app buit with reactjs, redux and chakra ui, manage your orders from the table',
+		description: 'Aplicación web construida con React Js, Redux, Chakra ui',
 		linkOnline: 'https://foody-dashboard.vercel.app',
 	},
 
 	{
 		title: 'Quiz Game',
-		description: 'Quiz game built with CRA, Redux and Bulma Css',
+		description: 'Quiz game construido con CRA, Redux y Bulma Css',
 		linkOnline: 'https://quiz-game-chi.vercel.app/',
 		linkRepo: 'https://github.com/j4viermora/quiz-game',
 	},
@@ -22,23 +21,24 @@ export const projects: Project[] = [
 	// 	linkRepo: 'https://github.com/j4viermora/fake-store',
 	// },
 	{
-		title: 'Calendar App',
-		description: 'Web app built with MERN stack and deployed heroku cloud',
-		linkOnline: 'https://ocumochino-app.herokuapp.com/',
-		linkRepo: 'https://github.com/j4viermora/calender-app-front-end',
-	},
-	{
 		title: 'Calculator Paypal',
 		description:
-			'Sinple paypal calculator, to help me when it comes to making payments for my work, and deployed in Github Page',
+			'Calculadora simple para calcular comisiones de paypal para ayudarme en mi trabajado como freelance, deployada en Githun Page',
 		linkOnline: 'https://j4viermora.github.io/calculator-paypal/',
 		linkRepo: 'https://github.com/j4viermora/calculator-paypal',
 	},
 	{
 		title: 'Clone IOS Calculator React Native',
-		description: 'Mobile App built with React Native and TypeScript',
+		description:
+			'Aplicaciones móvil construida con React Native y Typescript',
 		linkOnline: '',
 		linkRepo: 'https://github.com/j4viermora/calculator-RN',
+	},
+	{
+		title: 'Calendar App',
+		description: 'App construida con MERN stack',
+		linkOnline: 'https://ocumochino-app.herokuapp.com/',
+		linkRepo: 'https://github.com/j4viermora/calender-app-front-end',
 	},
 	// {
 	// 	title: 'Chat App React',

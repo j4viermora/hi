@@ -6,13 +6,24 @@ import Head from 'next/head';
 import { BlogLayout } from '../../layout/BlogLayout';
 import MDXComponents from '../../components/MDXComponents';
 import Image from 'next/image';
+import { IFrontmatter } from '../../interfaces/interfaces';
 
-export const SinglePost = ({ source, frontmatter }: any) => {
+interface IProps {
+	source: {
+		compiledSource: string;
+		scope?: {};
+	};
+	frontmatter: IFrontmatter;
+}
+
+export const SinglePost = ({ source, frontmatter }: IProps) => {
 	return (
 		<>
 			<Head>
 				<title>{frontmatter.title}</title>
-				<meta content={frontmatter.title}></meta>
+				<meta charSet='utf-8'></meta>
+				<meta name='description' content={frontmatter.content}></meta>
+				<meta name='keywords' content={frontmatter.keywords} />
 			</Head>
 			<BlogLayout>
 				<section className='section is-medium'>
@@ -34,7 +45,9 @@ export const SinglePost = ({ source, frontmatter }: any) => {
 								style={{
 									width: 10,
 								}}></span>
-							<a href='https://j4viermora' target='_blank'>
+							<a
+								href='https://twitter.com/j4viermora'
+								target='_blank'>
 								@j4viermora
 							</a>
 						</article>
@@ -51,6 +64,7 @@ export const getStaticProps: GetStaticProps = async ({
 	params: { slug },
 }: any) => {
 	const { source, frontmatter } = await getFileBySlug(slug);
+
 	return {
 		props: {
 			source,
@@ -67,6 +81,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			slug: post.replace('.mdx', ''),
 		},
 	}));
+
+	console.log(paths);
 
 	return {
 		paths,

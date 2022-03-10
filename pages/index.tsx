@@ -13,16 +13,16 @@ export default function Home() {
 			<>
 				<Head>
 					<title>Javier A. Mora</title>
+					<meta charSet='utf-8'></meta>
 					<meta
 						name='description'
-						content='Conoce un poco sobre mí y sobre mi trabajo como desarrollador web'
+						content='Artículos, recursos y tutoriales sobre Desarrollo Web, Frontend, Backend, JavaScript ☕️, React ⚛️, Vue y CSS'
 					/>
 					<meta
 						name='keywords'
-						content='Javier Mora, Desarrollo web, Portafolio Javier Mora'
+						content='Javier Mora, Desarrollador web, Portafolio Javier Mora, Javier Mora Venezuela'
 					/>
 					<meta name='robots' content='index' />
-					<link rel='icon' href='/favicon.ico' />
 				</Head>
 				<Header name='Javier' role='FullStack JavaScript Developer' />
 				<hr />
