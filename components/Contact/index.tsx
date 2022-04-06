@@ -39,7 +39,7 @@ export const Contact = () => {
 	return (
 		<section className='section is-medium' id='contact'>
 			<h3 className='title'>Contacto</h3>
-			<p>Si quieres trabajar conmigo no dudes en contactarme</p>
+			<p>Si quieres sabes algo de mi no dudes en contactarme</p>
 			<form
 				onSubmit={handleSubmit}
 				className='mt-5'
@@ -88,7 +88,7 @@ export const Contact = () => {
 							id='subject'
 							className='input'
 							type='text'
-							placeholder='Future of gothic city without batman'
+							placeholder='El futuro de ciudad gotica sin batman'
 							required
 							value={subject}
 							onChange={handleChange}
@@ -101,7 +101,7 @@ export const Contact = () => {
 						<textarea
 							id='message'
 							className='textarea'
-							placeholder='Hi Javier, since Batman has been missing Gordon for a week and I thought it was good to ask for your help'
+							placeholder='Hola Javier, desde que Batman a desaparecido, gordon no sabe que hacer, ayuda'
 							value={message}
 							onChange={handleChange}></textarea>
 					</div>

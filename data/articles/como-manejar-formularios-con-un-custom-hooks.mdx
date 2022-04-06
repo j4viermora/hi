@@ -1,0 +1,128 @@
+---
+title: 'Maneja tus formularios en react con un custom hooks'
+date: '28-03-2022'
+content: 'Manejar tus formularios sin código de terceros ya no será un dolor de cabeza'
+keywords: 'Custom Hooks React, React, ReactJs, Aprendiendo React Fácil, Manejo de formularios React'
+---
+
+# 🪝Custom hook para manejo de formularios
+
+![imagen](/custom-hook-form.jpg)
+
+Manejar formularios en react puede ser un dolor de cabeza, si estás comenzando lo que quizás te venga a la mente es crear un estado para cada input y solucionarás el problema, pero seguro te gustaría hacerlo de una manera mas elegante.
+
+Me gustaría aclarar que, ya existen librerías como [formik](https://formik.org/) (mi preferida) y [react hooks form](https://react-hook-form.com/), que ya resulven muchos de los problemas, sin embargo con el hook que aprenderemos hoy podremos salir de apuros en aplicaciones sencillas.
+
+## useForm o useField
+
+Antes que nada necesitamos ubicarnos en la carpeta hooks de nuestros proyecto, si aún no la tienes creada es momento de hacerlo, dentro de ella creamos un archivo javascript que le pondrémos en esta ocasión useField.
+
+En el vamos crear una funcion que reciba un parametro que podemos llamarlo formFields o formValues como mejor te resulte, adicional crearemos un estado que que como initalState reciba el objeto formFields y nuestro estado estará seteado correctamente.
+
+Por ultimo retornaremos nuestro estado del formulario.
+
+```javascript
+import { useState } form 'react'
+export const useField = ( formFields ) => {
+
+    const [ form, updateForm ] = useState( formFields )
+
+    //algo hermoso pasará aquí
+
+    return {
+        form
+    }
+};
+```
+
+El parámetro formField es un objeto con los campos que tendrá nuestro formulario, al hacerlo de esta manera permitirá que sea dinamico, y ya veremos cómo gestionar el estado y actualizarlo paso a paso.
+
+Ahora vayamos al componente donde lo usarémos y llamarémos a nuestro hooks el cual retorna el estado de nuestro formulario, que tiene los campos que le pasaremos al useField, en este caso un objeto con solo dos propiedades, user y password. Vamos destructurar nuestro form y ya podremos acceder fácilmente a "user y password" los cuales asociaremos como value de cada uno de los inputs respectivamente.
+
+```javascript
+export function MyComponentForm() {
+	const { form } = useField({
+		user: '',
+		password: '',
+	});
+
+	const { user, password } = form;
+
+	return (
+		<form>
+			<input name='user' id='user' value={user} />
+			<input name='password' id='password' value={password} />
+		</form>
+	);
+}
+```
+
+## Actualizando los campos de nuestro formulario
+
+Hasta este momento si intentamos escribir en nuestro formulario no pasara nada, en realidad nuestro custom hook no esta haciendo nada en este momento, solo esta declarado viendose bonito 😄 es moento de empezar a actualizar nuestro estado.
+
+Para ello vamos a nuestro archivo useField y dentro empezarémos a escribir nuestro manejador de cambios, (le llamaremos así porque para actualizar el estado usaremos el evento onchage de javascript), recordemos que los eventos de react son sintéticos, esto quiere decir que se comportan muy parecido a los de javascript vanilla, pero pueden tener una apariencia diferente. Si tienes curiosidad puedes hacer un console.log del evento que retorna cada funcion "on" en los react element en este caso onChange nos retorna el target entre otras cosas, y dentro de target podemos encontrar sus atributos.
+
+Recordemos que en nuestro componente MyComponentForm a las etiquétas input le agregámos el atributo name y un id, cualquiera de los dos serán útiles para lo que queremos lograr. Algo importante, el valor de los atributos (el que elijamos utilizar) debe ser igual a las propieadades declarádas en nuestro objeto formFields que le pasamos como argumento a useField.
+
+```javascript
+import { useState } form 'react'
+export const useField = (formFields) => {
+
+    const [form, updateForm] = useState(formFields)
+
+    // nuestro manejador de cambios
+    const handlerChange = ({ target }) => {
+        updateForm({
+            ...form,
+            [name]: target.value
+        })
+    }
+
+    return {
+        form,
+        handlerForm
+    }
+};
+```
+
+¿Notaste lo que logramos? te lo explicaré paso a paso,
+
+-   Hacemos uso del operador spread para por decirlo de alguna manera hacer una copia de nuestro estado,
+-   Luego actualizamos la propiedad correspondiente al input que esta utilizando el usuario, como el valor de nuestro atributo name en nuestros react elements son iguales, a las propiedades de nuestro estado, podemos identificar en que input esta escribiendo el usuario, mediante las llaves cuadradas hacemos selección por "key" y reemplazamos el valor anterior por el valor actual que está viniendo del value del input.
+
+Ahora volvemos a nuestro componente y usamos la funcion handlerChange para empezar a utilizar nuestra formulario.
+
+```javascript
+export function MyComponentForm() {
+	const { form, handlerChange } = useField({
+		user: '',
+		password: '',
+	});
+
+	const { user, password } = form;
+
+	return (
+		<form>
+			<input
+				name='user'
+				id='user'
+				value={user}
+				onChange={handlerChange}
+			/>
+			<input
+				name='password'
+				id='password'
+				value={password}
+				onChange={handlerChange}
+			/>
+		</form>
+	);
+}
+```
+
+## Felicidades tienes un custom hook
+
+La próxima vez que necesites, gestionar formularios y no quieras instalar una librería ya tienes la solución. Algo que me gustaría aclarar, se pueden hacer mejorar, agregarle el funcion para hacer reset del formulario por ejemplo, y por más que nos gustaría que no fuese así, puede tener problemas de performance, en formularios muy complejos, en estos casos puntuales recomiendo el uso de alguna librería especialida.
+
+Si te ha servido, no dudes en etiquetarme en twitter, mostrandome lo genial que te la pasas programando en React.

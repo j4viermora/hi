@@ -1,11 +1,14 @@
 import React from 'react';
-import { getFileBySlug, getFiles } from '../../lib/mdx';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { MDXRemote } from 'next-mdx-remote';
+import Image from 'next/image';
 import Head from 'next/head';
+
+import { GetStaticPaths, GetStaticProps } from 'next';
+
+
+import { getFileBySlug, getFiles } from '../../lib/mdx';
+import { MDXRemote } from 'next-mdx-remote';
 import { BlogLayout } from '../../layout/BlogLayout';
 import MDXComponents from '../../components/MDXComponents';
-import Image from 'next/image';
 import { IFrontmatter } from '../../interfaces/interfaces';
 
 interface IProps {
@@ -82,7 +85,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		},
 	}));
 
-	console.log(paths);
+	// console.log(paths);
 
 	return {
 		paths,

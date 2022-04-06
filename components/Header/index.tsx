@@ -9,7 +9,7 @@ export const Header = ({ name, role }: Developer) => {
 	return (
 		<>
 			<header className='section'>
-				<div className='container__title'>
+				<div className='container__title' id='home'>
 					<img
 						className='mb-5'
 						src='https://avatars.githubusercontent.com/u/55900303?v=4'
