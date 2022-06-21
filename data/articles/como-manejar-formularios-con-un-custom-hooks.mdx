@@ -1,6 +1,7 @@
 ---
 title: 'Maneja tus formularios en react con un custom hooks'
-date: '28-03-2022'
+# mm/dd/yyyy
+date: '03-28-2022'
 content: 'Manejar tus formularios sin código de terceros ya no será un dolor de cabeza'
 keywords: 'Custom Hooks React, React, ReactJs, Aprendiendo React Fácil, Manejo de formularios React'
 ---
@@ -41,19 +42,19 @@ Ahora vayamos al componente donde lo usarémos y llamarémos a nuestro hooks el 
 
 ```javascript
 export function MyComponentForm() {
-	const { form } = useField({
-		user: '',
-		password: '',
-	});
+  const { form } = useField({
+    user: '',
+    password: '',
+  });
 
-	const { user, password } = form;
+  const { user, password } = form;
 
-	return (
-		<form>
-			<input name='user' id='user' value={user} />
-			<input name='password' id='password' value={password} />
-		</form>
-	);
+  return (
+    <form>
+      <input name='user' id='user' value={user} />
+      <input name='password' id='password' value={password} />
+    </form>
+  );
 }
 ```
 
@@ -88,36 +89,31 @@ export const useField = (formFields) => {
 
 ¿Notaste lo que logramos? te lo explicaré paso a paso,
 
--   Hacemos uso del operador spread para por decirlo de alguna manera hacer una copia de nuestro estado,
--   Luego actualizamos la propiedad correspondiente al input que esta utilizando el usuario, como el valor de nuestro atributo name en nuestros react elements son iguales, a las propiedades de nuestro estado, podemos identificar en que input esta escribiendo el usuario, mediante las llaves cuadradas hacemos selección por "key" y reemplazamos el valor anterior por el valor actual que está viniendo del value del input.
+- Hacemos uso del operador spread para por decirlo de alguna manera hacer una copia de nuestro estado,
+- Luego actualizamos la propiedad correspondiente al input que esta utilizando el usuario, como el valor de nuestro atributo name en nuestros react elements son iguales, a las propiedades de nuestro estado, podemos identificar en que input esta escribiendo el usuario, mediante las llaves cuadradas hacemos selección por "key" y reemplazamos el valor anterior por el valor actual que está viniendo del value del input.
 
 Ahora volvemos a nuestro componente y usamos la funcion handlerChange para empezar a utilizar nuestra formulario.
 
 ```javascript
 export function MyComponentForm() {
-	const { form, handlerChange } = useField({
-		user: '',
-		password: '',
-	});
+  const { form, handlerChange } = useField({
+    user: '',
+    password: '',
+  });
 
-	const { user, password } = form;
+  const { user, password } = form;
 
-	return (
-		<form>
-			<input
-				name='user'
-				id='user'
-				value={user}
-				onChange={handlerChange}
-			/>
-			<input
-				name='password'
-				id='password'
-				value={password}
-				onChange={handlerChange}
-			/>
-		</form>
-	);
+  return (
+    <form>
+      <input name='user' id='user' value={user} onChange={handlerChange} />
+      <input
+        name='password'
+        id='password'
+        value={password}
+        onChange={handlerChange}
+      />
+    </form>
+  );
 }
 ```
 

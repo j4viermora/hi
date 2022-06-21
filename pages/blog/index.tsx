@@ -7,62 +7,54 @@ import { ListItemPostBlog } from '../../components/ListItemPostBlog';
 import { TitlePost } from '../../interfaces/interfaces';
 
 interface Props {
-	post: TitlePost[];
+  post: TitlePost[];
 }
 
 const blog = ({ post }: Props) => {
-	return (
-		<>
-			<Head>
-				<title>Blog</title>
-				<meta
-					name='description'
-					content='Blog sobre desarrollo web y tecnología by Javier Mora'
-				/>
-				<meta
-					name='keywords'
-					content='Blog desarrollo web, Desarrollo web, JavaScript tips'
-				/>
-				<meta name='robots' content='index' />
-			</Head>
-			<BlogLayout>
-				<>
-					{/* <section className='section mt-6 is-flex is-justify-content-center'>
-							<div className='card mx-3'>
-								<div className='card-content'>JavaScript</div>
-							</div>
-							<div className='card mx-3'>
-								<div className='card-content'>Css</div>
-							</div>
-							<div className='card mx-3'>
-								<div className='card-content'>Html</div>
-							</div>
-						</section> */}
-					{/* <hr /> */}
-					<section className='section is-medium'>
-						{/* <h2 className='title is-1 mb-6'>
-								This section is under construction
-							</h2> */}
-						<h2 className='title mb-6'>Últimos Artículos:</h2>
-						<ul>
-							{post.slice(0, 5).map((post: TitlePost) => (
-								<ListItemPostBlog key={post.title} {...post} />
-							))}
-						</ul>
-					</section>
-				</>
-			</BlogLayout>
-		</>
-	);
+  //@ts-ignore
+
+  const listPost = [...post];
+
+  return (
+    <>
+      <Head>
+        <title>Blog</title>
+        <meta
+          name='description'
+          content='Blog sobre desarrollo web y tecnología by Javier Mora'
+        />
+        <meta
+          name='keywords'
+          content='Blog desarrollo web, Desarrollo web, JavaScript tips'
+        />
+        <meta name='robots' content='index' />
+      </Head>
+      <BlogLayout>
+        <>
+          <section className='section is-medium'>
+            <h2 className='title mb-6'>Últimos Artículos:</h2>
+            <ul>
+              {listPost
+                //@ts-ignore
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .map((post: TitlePost) => {
+                  return <ListItemPostBlog key={post.title} {...post} />;
+                })}
+            </ul>
+          </section>
+        </>
+      </BlogLayout>
+    </>
+  );
 };
 
 export default blog;
 
 export const getStaticProps = async () => {
-	const post = await getAllFilesMetadata();
-	return {
-		props: {
-			post,
-		},
-	};
+  const post = await getAllFilesMetadata();
+  return {
+    props: {
+      post,
+    },
+  };
 };

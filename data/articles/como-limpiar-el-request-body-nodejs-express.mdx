@@ -1,0 +1,79 @@
+---
+title: 'Limpia el request body en nodejs(express)'
+# mm/dd/yyyy
+date: '06-21-2022'
+content: 'Manejar tus formularios sin código de terceros ya no será un dolor de cabeza'
+keywords: 'Nodejs, middleware express, limpiar objetos javascript, expressjs'
+---
+
+![limpieza-middleware-propiedades-objetos-nodejs.jpeg](/limpieza-middleware-propiedades-objetos-nodejs.jpeg)
+
+Seguramente en alguna ocasión mientras desarrollabas tu api, quisiste hacer una actualización pero no quieres que ciertos campos sean actualizado bajo ninguna circunstancía, y has empezado a validar y limpiar tu body desde el controlador (aqui vamos a super que estamos usando node y express )
+
+```js
+const updateSomething = async (req, resp) => {
+  const { anyProperty, ...rest } = req.body;
+
+  // aqui actualizamos a base de datos
+  const result = await udpateFunction(...rest);
+};
+```
+
+### El problema 🥲
+
+Bueno estoy seguro que no es una accion que haras en un solo controlador seguramente repetiremos esto varias veces a traves de nuestra app y como somos buenos devs no queremos repetirnos a nosotros mismo. DRY
+
+En el ejemplo pasado tambien nos encontramos con una situación ¿Y si son varias las propiedades que queremos borrar del body?
+
+### La solución 🥳
+
+Bueno seguro te vienen soluciones a la mente pero a mi se me ocurrio extraer esa logica a un middleware que podamos usar en cualquier ruta dejame y te enseño como hacerlo fácilmente.
+
+```js
+export const sanitizeRequestBody = (properties = []) => {
+  return (req, res, next) => {
+    if (!req.body) {
+      return res.status(400).json({
+        message: 'No se ha enviado ningun body',
+      });
+    }
+
+    for (let i = 0; i < properties.length; i++) {
+      delete req.body[properties[i]];
+    }
+    next();
+  };
+};
+```
+
+Puedes copias y pegar sin entender que está pasando, pero te contaré brevenemente lo que esta pasando, recibimos un array de propiedades (la key que quiere eliminar en body) y lo recorremos y por cada posición aplicamos el operador delete y eso seria todo, no es para nada dificil.
+
+¿Lo quieres ver en acción? pues nada es super sencillo
+
+```js
+// importacion del modulo
+import { sanitizeRequestBody } from 'middlewares'
+import { updateSomething } from 'something.controllers.js'
+
+import {Route} from 'express'
+const route. = Route()
+
+route.put(
+    '/update/:id',
+    [
+        validateJWT,        sanitizeRequestBody(['dni', 'companyId', 'client']),
+    ],
+    updateSomething
+);
+```
+
+Y eso fue todo.
+
+### Algo que no quieres leer 🛑
+
+Si este middleware te funciono perfecto, me alegro pero antes me gustaria decirte dos cosas
+
+- Si puedes escoger la tecnología utiliza nest js, si no puedes y usas express, usa express-validator, tienes un monton de validacion y sanitización super util.
+- Es mejor que crees un DTO para estas movidas
+
+Y si no sabes que es un dto pues felicidades, ya tienes algo nuevo que aprender esta semana 😄
