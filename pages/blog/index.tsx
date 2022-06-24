@@ -36,7 +36,7 @@ const blog = ({ post }: Props) => {
             <ul>
               {listPost
                 //@ts-ignore
-                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                // .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .map((post: TitlePost) => {
                   return <ListItemPostBlog key={post.title} {...post} />;
                 })}
