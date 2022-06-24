@@ -11,7 +11,7 @@ export const ListItemPostBlog = ({ title, slug, date }: TitlePost) => {
             <div>
               {/* <img className='mr-3' src={img} /> */}
               <h3 className='title is-5'>{title}</h3>
-              <p>{new Date(date).toLocaleDateString()}</p>
+              <p>{date}</p>
             </div>
           </a>
         </Link>
