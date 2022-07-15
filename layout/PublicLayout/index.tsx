@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Footer } from '../../components/Footer';
 import { Navbar } from '../../components/Navbar';
-import { PropsLayout } from '../../interfaces/interfaces';
 
-export const PublicLayout = ({ children }: PropsLayout) => {
-	return (
-		<>
-			<Navbar />
-			{children}
-			<Footer />
-		</>
-	);
+export const PublicLayout: FC = ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      {children}
+      <Footer />
+    </>
+  );
 };
