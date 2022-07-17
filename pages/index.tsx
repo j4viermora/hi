@@ -30,9 +30,9 @@ export default function Home() {
 				<hr />
 				<About />
 				<hr />
-				<MyWork />
-				<hr />
 				<Experience />
+				<hr />
+				<MyWork />
 				<hr />
 				<Contact />
 			</>
