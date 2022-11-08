@@ -1,0 +1,46 @@
+---
+title: 'Obten dias previos o siguientes apartir de una fecha (javascript)'
+# mm/dd/yyyy
+date: '08-11-2022'
+content: 'Saber las fechas previas y siguientes a una fecha nunca mas será algo que te quite mucho tiempo'
+keywords: 'Javascript, Date, moment, luxon, daysjs'
+---
+
+![calendar](/calendar-tablet.jpg)
+
+# Obten dias previos de una fecha usando javascript
+
+El objeto Date de javascript actualmente es muy poderos, y sus métodos nos permiten hacer muchas cosas interesante, el dia hoy 
+estaremos conociendo el metodo setDate (si quieres leer  [la docs oficial te pincha aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate))
+
+El método setDate toma el dia del mes de la fecha como parámetro y cambia el valor de la instancia de la fecha, veamos unos ejemplos a continuación
+
+```js
+function getPreviousDay(date = new Date()) {
+  const previous = new Date(date.getTime());
+  previous.setDate(date.getDate() - 1);
+
+  // De esta forma tenemos el formato yyyy-mm-dd
+  return previous.toISOString().split("T")[0];
+}
+
+console.log(getPreviousDay()); // 👉️ yesterday
+
+// 👇️ 2022-12-24
+console.log(getNextDay(new Date('2022-12-23')));
+
+// 👇️ 2022-12-22
+console.log(getPreviousDay(new Date('2022-12-23')));
+
+```
+
+
+Lo que sucede se puede explicar de la siguiente manera tengo una fecha en este caso el 23 de diciembre, setDate recibe el número del día por el que se quiere cambiar la fecha
+supongamos que queremos obtener la fecha correspodiente a 30 días antes de la fecha actual, usariamos
+
+```js
+const currentDay = new Date()
+const last30days = currentDay.setDate(new Date().getDate() - 30)
+```
+
+De esta forma sencilla y con el método setDate pordemos saber los dias previos y siguientes relativos a una fecha
