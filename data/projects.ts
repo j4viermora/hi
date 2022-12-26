@@ -2,12 +2,6 @@ import { Project } from '../interfaces/interfaces';
 
 export const projects: Project[] = [
 	{
-		title: 'Foody App',
-		description: 'Aplicación web construida con React Js, Redux, Chakra ui',
-		linkOnline: 'https://foody-dashboard.vercel.app',
-	},
-
-	{
 		title: 'Quiz Game',
 		description: 'Quiz game construido con CRA, Redux y Bulma Css',
 		linkOnline: 'https://quiz-game-chi.vercel.app/',

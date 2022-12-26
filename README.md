@@ -38,4 +38,4 @@ yarn
 
 ## Contribuciones
 
-Todo el código es open source, asi que no dudes dejar tu pr, que sera tomada en cuenta
+Todo el código es open source, asi que no dudes dejar tu pr

@@ -17,21 +17,11 @@ export const Experience = () => {
 					</li>
 					<li>
 						<h3 className='title is-5 mt-6'>
-							Aras gruop - frontend dev agosto 2021 - Enero 2022
+							Aras gruop - frontend dev (profesional independiente) agosto 2021 - febrero 2022
 						</h3>
 						<p>
-							Desarrollo de su plataforma interna para gestion de
-							portafolios de inversión, todo bajo ReactJS y React
-							Native
-						</p>
-					</li>
-					<li>
-						<h3 className='title is-5 mt-6'>
-							Social Buey Agencia digital Abril 2020 - Julio 2021
-						</h3>
-						<p>
-							Diseño he implementación de sitios web, construidos
-							con elementor page builder
+						Desarrollo de su plataforma interna para la gestion de portafolio de inversión. 
+						Las herramientas que utilice fueron Reactjs y React Native.
 						</p>
 					</li>
 					<li>
