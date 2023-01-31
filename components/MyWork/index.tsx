@@ -49,14 +49,6 @@ export const MyWork = () => {
 							))}
 						</ul>
 					)}
-					<p className='mt-5 '>
-						Puedes ver mi perfil a workana{' '}
-						<a
-							href='https://www.workana.com/freelancer/62d3e6273bc3792e5100c6e539b5a1bd'
-							target='_blank'>
-							aquí
-						</a>
-					</p>
 				</div>
 			</section>
 			<style jsx>{`
