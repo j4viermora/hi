@@ -12,7 +12,7 @@ export const Header = ({ name, role }: Developer) => {
 				<div className='container__title' id='home'>
 					<img
 						className='mb-5'
-						src='https://avatars.githubusercontent.com/u/55900303?v=4'
+						src='/foto-de-perfil.jpg'
 					/>
 					<h2 className='title is-2'>Hola, soy {name}</h2>
 					<h3 className='title is-4'>{role}</h3>
