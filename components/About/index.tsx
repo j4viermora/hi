@@ -9,10 +9,7 @@ export const About = () => {
 					style={{
 						maxWidth: '60vw',
 					}}>
-					Apasionado por la tecnología, la web y las tecnologías,
-					frontend, me encanta ReactJs, los atardeceres a orillas del
-					mar y el cine. Actualmente me desempeño como frontend
-					developer en{' '}
+					Software developer, apasionado de la tecnología, me gusta construir software mantenible y escalable, actualmente soy FullStack developer en {' '}
 					<a
 						href='https://www.alegra.com/'
 						rel='noopener noreferrer'

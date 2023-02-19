@@ -30,30 +30,36 @@ export const NavbarBlog = () => {
         id='navbarExampleTransparentExample'
         className={`navbar-menu ${open && 'is-active'}`}>
         <div className='navbar-end'>
+          <Link href='/'>
+            <a className='navbar-item' href='#'>
+              Inicio
+            </a>
+          </Link>
           <Link href='/blog'>
             <a className='navbar-item' href='#'>
               Blog
             </a>
           </Link>
+          <a
+            href='https://github.com/j4viermora'
+            className='navbar-item'
+            target='_blank'>
+            Github
+          </a>
         </div>
         <div className='navbar-end'>
           <div className='navbar-item'>
             <SearchComponent />
           </div>
-          <div className='navbar-item'>
+          {/* <div className='navbar-item'>
             <div className='field is-grouped'>
-              <a
-                href='https://github.com/j4viermora'
-                className='button mr-3'
-                target='_blank'>
-                Github
-              </a>
+
 
               <button className='button is-link' onClick={goBack}>
                 Ir atras
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

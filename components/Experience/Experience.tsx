@@ -10,10 +10,10 @@ export const Experience = () => {
 				<ul>
 					<li>
 						<h3 className='title is-5 mt-6'>
-							Alegra web - frontend developer abril 2022 -
+							Alegra web - Software developer abril 2022 -
 							Actualidad
 						</h3>
-						<p>Desarrollador frontend con VueJs</p>
+						<p>Desarrollar, testear y mantener aplicaiones en Vuejs, manatener aplicaciones en php y microservicios en serverless framewok (nodejs)</p>
 					</li>
 					<li>
 						<h3 className='title is-5 mt-6'>

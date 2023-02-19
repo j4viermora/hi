@@ -24,7 +24,7 @@ export default function Home() {
 					/>
 					<meta name='robots' content='index' />
 				</Head>
-				<Header name='Javier' role='FullStack JavaScript Developer' />
+				<Header name='Javier' role='Software Web Developer' />
 				{/* <hr /> */}
 				{/* <HomeWork /> */}
 				<hr />
