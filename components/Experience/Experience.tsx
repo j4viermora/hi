@@ -8,10 +8,19 @@ export const Experience = () => {
 			</div>
 			<div className='content'>
 				<ul>
+				<li>
+					<h3 className='title is-5 mt-6'>
+							hackU - Senior Frontend Developer abril 2023 -
+							Actualidad
+					</h3>
+						<p>
+							Construir y mejorar el performance de la app web
+						</p>
+					</li>
 					<li>
 						<h3 className='title is-5 mt-6'>
 							Alegra web - Software developer abril 2022 -
-							Actualidad
+							Abril 2023
 						</h3>
 						<p>Desarrollar, testear y mantener aplicaiones en Vuejs, manatener aplicaciones en php y microservicios en serverless framewok (nodejs)</p>
 					</li>
