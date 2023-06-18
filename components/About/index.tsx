@@ -9,12 +9,12 @@ export const About = () => {
 					style={{
 						maxWidth: '60vw',
 					}}>
-					Software developer, apasionado de la tecnología, me gusta construir software mantenible y escalable, actualmente soy FullStack developer en {' '}
+					Software developer, apasionado de la tecnología, me gusta construir software mantenible y escalable, actualmente soy Senior Frontend Developer en {' '}
 					<a
-						href='https://www.alegra.com/'
+						href='https://hacku.com/'
 						rel='noopener noreferrer'
 						target={'_blank'}>
-						Alegra.
+						hackU.
 					</a>
 				</p>
 			</section>
