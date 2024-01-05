@@ -6,28 +6,15 @@ export const Contact = () => {
 	const [form, setForm] = useState({
 		name: '',
 		email: '',
-		subject: '',
 		message: '',
 	});
 
-	const { name, email, subject, message } = form;
-
-	const finallyMessage = `Hola mi nombre es ${name} \n Mi correo es: ${email} \n ${message}`;
+	const { name, email, message } = form;
 
 	const handleChange = ({ target }: any) => {
 		setForm({
 			...form,
 			[target.id]: target.value,
-		});
-	};
-
-	const resetForm = () => {
-		setForm({
-			...form,
-			email: '',
-			name: '',
-			subject: '',
-			message: '',
 		});
 	};
 
@@ -39,7 +26,7 @@ export const Contact = () => {
 	return (
 		<section className='section is-medium' id='contact'>
 			<h3 className='title'>Contacto</h3>
-			<p>Si quieres sabes algo de mi no dudes en contactarme</p>
+			<p>Si quieres trabajar conmigo</p>
 			<form
 				onSubmit={handleSubmit}
 				className='mt-5'
@@ -72,25 +59,9 @@ export const Contact = () => {
 							id='email'
 							className='input'
 							type='email'
-							placeholder='pedro@cuidadgotica.com'
+							placeholder='pedro@gotham.com'
 							required
 							value={email}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				<div className='field'>
-					<label htmlFor='name' className='label'>
-						Subject
-					</label>
-					<div className='control'>
-						<input
-							id='subject'
-							className='input'
-							type='text'
-							placeholder='El futuro de ciudad gotica sin batman'
-							required
-							value={subject}
 							onChange={handleChange}
 						/>
 					</div>
@@ -101,7 +72,7 @@ export const Contact = () => {
 						<textarea
 							id='message'
 							className='textarea'
-							placeholder='Hola Javier, desde que Batman a desaparecido, gordon no sabe que hacer, ayuda'
+							placeholder='Escribe tu mensaje...'
 							value={message}
 							onChange={handleChange}></textarea>
 					</div>
@@ -110,7 +81,7 @@ export const Contact = () => {
 				<button className='button'>Enviar mensajes</button>
 				<a
 					id='emailTo'
-					href={`mailto:${emailTo}?subject=${subject}&body=${finallyMessage}`}></a>
+					href={`mailto:${emailTo}?body=${message}&subject=${name}`}></a>
 			</form>
 		</section>
 	);
