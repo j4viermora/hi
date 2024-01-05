@@ -46,8 +46,10 @@ export const Navbar = () => {
           >
             Github
           </a>
-          <Link href="/blog" className="navbar-item">
-            Blog
+          <Link href="/blog">
+            <span className="navbar-item" style={{
+              cursor: 'pointer'
+            }}>Blog</span>
           </Link>
         </div>
       </div>

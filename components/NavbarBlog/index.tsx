@@ -13,8 +13,10 @@ export const NavbarBlog = () => {
   return (
     <nav className="navbar is-fixed-top is-transparent">
       <div className="navbar-brand">
-        <Link href="/" className="navbar-item">
+        <Link href="/" >
+          <span className="navbar-item is-clickable">
           Javier Mora
+          </span>
         </Link>
         <div
           className={`navbar-burger ${open && "is-active"}`}
@@ -32,11 +34,17 @@ export const NavbarBlog = () => {
         className={`navbar-menu ${open && "is-active"}`}
       >
         <div className="navbar-end">
-          <Link href="/" className="navbar-item">
+          <Link href="/" >
+            <span className="navbar-item is-clickable">
+
             Inicio
+            </span>
           </Link>
-          <Link href="/blog" className="navbar-item">
+          <Link href="/blog" >
+            <span className="navbar-item is-clickable" >
+
             Blog
+            </span>
           </Link>
           <a
             href="https://github.com/j4viermora"
