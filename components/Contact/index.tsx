@@ -26,7 +26,7 @@ export const Contact = () => {
 	return (
 		<section className='section is-medium' id='contact'>
 			<h3 className='title'>Contacto</h3>
-			<p>Si quieres trabajar conmigo</p>
+			<p>Escríbeme y hablamos</p>
 			<form
 				onSubmit={handleSubmit}
 				className='mt-5'
