@@ -8,13 +8,21 @@ export const Experience = () => {
 			</div>
 			<div className='content'>
 				<ul>
-				<li>
+					<li>
+						<h3 className='title is-5 mt-6'>
+								Properix - Frontend Architect - Mejoro la developer experience del equipo front, liderando un proceso de migración y desacople de tecnologias legacies
+						</h3>
+						<p>
+							Construir y mejorar el performance de la app web
+						</p>
+					</li>
+					<li>
 					<h3 className='title is-5 mt-6'>
 							hackU - Senior Frontend Developer abril 2023 -
 							Actualidad
 					</h3>
 						<p>
-							Construir y mejorar el performance de la app web
+							Construir y mejorar el performance de la app web, liderar el equipo front, desarrole una estregia para la migracion de toda la app de redux saga a react query + zustand
 						</p>
 					</li>
 					<li>
