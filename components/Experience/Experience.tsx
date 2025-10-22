@@ -10,7 +10,7 @@ export const Experience = () => {
 				<ul>
 					<li>
 						<h3 className='title is-5 mt-6'>
-								Properix - Frontend Architect - Mejoro la developer experience del equipo front, liderando un proceso de migración y desacople de tecnologias legacies
+								Properix - Frontend Architect - Mejoro la developer experience del equipo front, liderando el proceso de migración y desacople de tecnologías legacy.
 						</h3>
 						<p>
 							Construir y mejorar el performance de la app web
